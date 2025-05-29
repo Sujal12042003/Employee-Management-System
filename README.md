@@ -3,7 +3,7 @@
 ## Default Users (Local Storage)
 
 ### Admins
-- **Email:** sujal.patel@example.com  
+- **Email:** admin@me.com  
   **Password:** 123
 
 ### Employees
