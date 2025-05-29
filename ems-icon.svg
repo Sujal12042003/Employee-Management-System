@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <circle cx="32" cy="20" r="12" fill="#4A90E2"/>
+  <rect x="12" y="38" width="40" height="18" rx="9" fill="#357ABD"/>
+  <text x="32" y="28" text-anchor="middle" font-size="10" fill="#fff" font-family="Arial" dy=".3em">EMS</text>
+</svg>
