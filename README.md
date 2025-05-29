@@ -55,7 +55,6 @@ A modern Employee Management System built with React and Vite. This project prov
 
 ## Static Build Usage
 - After building, open `index.html` in the EMS root folder. All assets are loaded from the `dist` directory.
-- Routing is handled internally by React. For static file hosting, use `HashRouter` for proper navigation.
 
 ## Project Structure
 - `src/components/` — React components for authentication, dashboards, and tasks
@@ -70,7 +69,7 @@ A modern Employee Management System built with React and Vite. This project prov
 - React Context API
 
 ## Credits
-- Developed by Sujal Patel and contributors.
+- Developed by Sujal Patel
 - Special thanks to all open-source libraries and the React community.
 
 ## License
