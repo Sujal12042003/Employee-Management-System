@@ -3,7 +3,6 @@ import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
 import AdminDashboard from "./components/Dashboard/AdminDashboard";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "./context/AuthProvider";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 const App = () => {
   const [user, setUser] = useState("");
@@ -53,16 +52,16 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={user ? <Navigate to={user === 'admin' ? '/admin' : '/employee'} /> : <Login handleLogin={handleLogin} />} />
-        <Route path="/login" element={<Login handleLogin={handleLogin} />} />
-        <Route path="/admin" element={user === "admin" && !viewingEmployee ? <AdminDashboard changeUser={setUser} userData={UserData} onEmployeeClick={handleEmployeeClick} /> : <Navigate to="/login" />} />
-        <Route path="/admin/employee" element={user === "admin" && viewingEmployee ? <EmployeeDashboard changeUser={handleBackToAdmin} userData={viewingEmployee} /> : <Navigate to="/admin" />} />
-        <Route path="/employee" element={user === "employee" ? <EmployeeDashboard changeUser={setUser} userData={UserData} /> : <Navigate to="/login" />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
+    <>
+      {!user ? <Login handleLogin={handleLogin} /> : null}
+      {user === "admin" && !viewingEmployee ? (
+        <AdminDashboard changeUser={setUser} userData={UserData} onEmployeeClick={handleEmployeeClick} />
+      ) : null}
+      {user === "admin" && viewingEmployee ? (
+        <EmployeeDashboard changeUser={handleBackToAdmin} userData={viewingEmployee} />
+      ) : null}
+      {user === "employee" ? <EmployeeDashboard changeUser={setUser} userData={UserData} /> : null}
+    </>
   );
 };
 
